@@ -17,6 +17,11 @@
        <PARAMETER>IV_PIC_STR</PARAMETER>
        <TYP>ICMDATA</TYP>
       </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_LANGUAGE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FPM_T_SPRAS</TYP>
+      </RSIMP>
      </IMPORT>
      <EXPORT>
       <RSEXP>
@@ -44,28 +49,34 @@
        <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
+       <PARAMETER>IV_LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language keys</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
        <PARAMETER>ET_OCR_MSG</PARAMETER>
        <KIND>P</KIND>
        <STEXT>DBA Cockpit: Protocol of External Command</STEXT>
-       <INDEX> 002</INDEX>
+       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_OCR_TXT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Objcont and Objhead as Table Type</STEXT>
-       <INDEX> 003</INDEX>
+       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
        <STEXT>ABAP System Field: Return Code of ABAP Statements</STEXT>
-       <INDEX> 004</INDEX>
+       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RET2</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Internal table over ACO_ERROR_MESSAGE</STEXT>
-       <INDEX> 005</INDEX>
+       <INDEX> 006</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
