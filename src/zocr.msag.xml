@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZOCR</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Image File Doesn&apos;t Exist</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>This is your first time to use OMS, please save your configuration first</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>It&apos;s your terminal first time to use OMS, pls save configuration first</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>User configuration has been added</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>User configuration has been changed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>No configuration changed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>The uploaded pic already exists in DB, will display the DB pic instead</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>The picture has been added to system</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>The existing picture has been updated</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>No changes on pictures</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Please select at least one line to display the picture</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Please only select one line to display the picture</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>IE Browser doesn&apos;t exist in given path, please check</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>The given temporary folder doesn&apos;t exist, please check</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Please check the MD5 value of this picture</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
