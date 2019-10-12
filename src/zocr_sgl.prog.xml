@@ -2857,6 +2857,16 @@
       <INT_NOTE>STANDARD_FULLSCREEN</INT_NOTE>
      </RSMPE_ATRT>
     </DOC>
+    <TIT>
+     <RSMPE_TITT>
+      <CODE>0101</CODE>
+      <TEXT>Setting</TEXT>
+     </RSMPE_TITT>
+     <RSMPE_TITT>
+      <CODE>0102</CODE>
+      <TEXT>User Specific Configuration</TEXT>
+     </RSMPE_TITT>
+    </TIT>
    </CUA>
    <TPOOL>
     <item>
