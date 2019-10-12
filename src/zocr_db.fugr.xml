@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>OCR DB Related Operations</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZOCR_DBTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZOCR_DB</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZTOCR01_DB_WRITE</FUNCNAME>
+     <SHORT_TEXT>DB layer ZTOCR01: Insert database entries</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_INS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTOCR01_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_UPD</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTOCR01_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_DEL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTOCR01_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IB_COMMIT</PARAMETER>
+       <DEFAULT>ABAP_FALSE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IB_WAIT</PARAMETER>
+       <DEFAULT>ABAP_FALSE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_INS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Standard Table Type for Table ZTOCR01</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_UPD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Standard Table Type for Table ZTOCR01</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_DEL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Standard Table Type for Table ZTOCR01</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IB_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IB_WAIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTOCR_DB_WRITE</FUNCNAME>
+     <SHORT_TEXT>DB layer ZTOCR: Insert database entries</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_INS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTOCR_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_UPD</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTOCR_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_DEL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTOCR_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IB_COMMIT</PARAMETER>
+       <DEFAULT>ABAP_FALSE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IB_WAIT</PARAMETER>
+       <DEFAULT>ABAP_FALSE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_INS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Standard Table Type for Table ZTOCR</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_UPD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Standard Table Type for Table ZTOCR</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_DEL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Standard Table Type for Table ZTOCR</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IB_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IB_WAIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
