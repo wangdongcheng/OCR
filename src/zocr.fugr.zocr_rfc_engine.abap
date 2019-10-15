@@ -12,7 +12,7 @@ FUNCTION zocr_rfc_engine.
 *"----------------------------------------------------------------------
   TYPES:
     BEGIN OF lts_pic_data,
-      pic_data TYPE text1024,
+      pic_data TYPE x LENGTH 1024,
     END OF lts_pic_data.
 
   CONSTANTS:
