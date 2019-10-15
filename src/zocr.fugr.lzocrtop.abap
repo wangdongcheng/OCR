@@ -1,3 +1,3 @@
-FUNCTION-POOL ZOCR.                         "MESSAGE-ID ..
+FUNCTION-POOL zocr.                         "MESSAGE-ID ..
 
 * INCLUDE LZOCRD...                          " Local class definition

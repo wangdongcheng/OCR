@@ -1211,6 +1211,14 @@
       <FUN_TEXT>Ok</FUN_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
+      <CODE>REFRESH</CODE>
+      <TEXTNO>001</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT_NAME>ICON_REFRESH</TEXT_NAME>
+      <ICON_ID>@42@</ICON_ID>
+      <FUN_TEXT>Refresh</FUN_TEXT>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
       <CODE>SAVE</CODE>
       <TEXTNO>001</TEXTNO>
       <TEXT_TYPE>S</TEXT_TYPE>
@@ -1772,25 +1780,25 @@
       <PFK_CODE>000004</PFK_CODE>
       <CODE>0001</CODE>
       <NO>01</NO>
-      <PFNO>07</PFNO>
+      <PFNO>08</PFNO>
      </RSMPE_BUT>
      <RSMPE_BUT>
       <PFK_CODE>000004</PFK_CODE>
       <CODE>0001</CODE>
       <NO>02</NO>
-      <PFNO>39</PFNO>
+      <PFNO>09</PFNO>
      </RSMPE_BUT>
      <RSMPE_BUT>
       <PFK_CODE>000004</PFK_CODE>
       <CODE>0001</CODE>
       <NO>03</NO>
-      <PFNO>37</PFNO>
+      <PFNO>39</PFNO>
      </RSMPE_BUT>
      <RSMPE_BUT>
       <PFK_CODE>000004</PFK_CODE>
       <CODE>0001</CODE>
       <NO>04</NO>
-      <PFNO>08</PFNO>
+      <PFNO>37</PFNO>
      </RSMPE_BUT>
      <RSMPE_BUT>
       <PFK_CODE>000004</PFK_CODE>
@@ -2079,13 +2087,19 @@
      <RSMPE_PFK>
       <CODE>000004</CODE>
       <PFNO>07</PFNO>
-      <FUNCODE>DISP_SGL</FUNCODE>
+      <FUNCODE>&amp;REFRESH</FUNCODE>
       <FUNNO>001</FUNNO>
      </RSMPE_PFK>
      <RSMPE_PFK>
       <CODE>000004</CODE>
       <PFNO>08</PFNO>
-      <FUNCODE>&amp;REFRESH</FUNCODE>
+      <FUNCODE>DISP_SGL</FUNCODE>
+      <FUNNO>001</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>000004</CODE>
+      <PFNO>09</PFNO>
+      <FUNCODE>REFRESH</FUNCODE>
       <FUNNO>001</FUNNO>
      </RSMPE_PFK>
      <RSMPE_PFK>
@@ -2735,6 +2749,10 @@
      <RSMPE_STAF>
       <STATUS>WKLST</STATUS>
       <FUNCTION>PRNT</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>WKLST</STATUS>
+      <FUNCTION>REFRESH</FUNCTION>
      </RSMPE_STAF>
      <RSMPE_STAF>
       <STATUS>WKLST</STATUS>

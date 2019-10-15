@@ -910,13 +910,22 @@ FORM save_pic_2_db
     lt_ztocr[ 1 ]-crtim = sy-uzeit.
     lt_ztocr[ 1 ]-crnam = sy-uname.
 
-    CALL FUNCTION 'ZTOCR_DB_WRITE'
+*    CALL FUNCTION 'ZTOCR_DB_WRITE'
+*      EXPORTING
+*        it_ins    = lt_ztocr
+**       IT_UPD    =
+**       IT_DEL    =
+*        ib_commit = abap_true
+*        ib_wait   = abap_true.
+
+    zocr_cl_db=>ztocr_db_write(
       EXPORTING
         it_ins    = lt_ztocr
-*       IT_UPD    =
-*       IT_DEL    =
-        ib_commit = abap_true
-        ib_wait   = abap_true.
+*       it_upd    =
+*       it_del    =
+        ib_commit = abap_false
+        ib_wait   = abap_false
+        ).
 
     ev_action = gc_action-ins.
 
@@ -927,13 +936,20 @@ FORM save_pic_2_db
     lt_ztocr[ 1 ]-chtim = sy-uzeit.
     lt_ztocr[ 1 ]-chnam = sy-uname.
 
-    CALL FUNCTION 'ZTOCR_DB_WRITE'
+    zocr_cl_db=>ztocr_db_write(
       EXPORTING
-*       IT_INS    =
         it_upd    = lt_ztocr
-*       IT_DEL    =
         ib_commit = abap_true
-        ib_wait   = abap_true.
+        ib_wait   = abap_true
+        ).
+
+*    CALL FUNCTION 'ZTOCR_DB_WRITE'
+*      EXPORTING
+**       IT_INS    =
+*        it_upd    = lt_ztocr
+**       IT_DEL    =
+*        ib_commit = abap_true
+*        ib_wait   = abap_true.
 
     ev_action = gc_action-upd.
 
