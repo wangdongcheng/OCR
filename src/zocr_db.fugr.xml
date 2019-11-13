@@ -50,31 +50,26 @@
        <PARAMETER>IT_INS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Standard Table Type for Table ZTOCR01</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_UPD</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Standard Table Type for Table ZTOCR01</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_DEL</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Standard Table Type for Table ZTOCR01</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IB_COMMIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IB_WAIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -120,31 +115,26 @@
        <PARAMETER>IT_INS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Standard Table Type for Table ZTOCR</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_UPD</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Standard Table Type for Table ZTOCR</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_DEL</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Standard Table Type for Table ZTOCR</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IB_COMMIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IB_WAIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
