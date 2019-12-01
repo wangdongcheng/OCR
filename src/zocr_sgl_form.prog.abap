@@ -924,8 +924,7 @@ FORM save_pic_2_db
 *       it_upd    =
 *       it_del    =
         ib_commit = abap_false
-        ib_wait   = abap_false
-        ).
+        ib_wait   = abap_false ).
 
     ev_action = gc_action-ins.
 
@@ -940,8 +939,7 @@ FORM save_pic_2_db
       EXPORTING
         it_upd    = lt_ztocr
         ib_commit = abap_true
-        ib_wait   = abap_true
-        ).
+        ib_wait   = abap_true ).
 
 *    CALL FUNCTION 'ZTOCR_DB_WRITE'
 *      EXPORTING
