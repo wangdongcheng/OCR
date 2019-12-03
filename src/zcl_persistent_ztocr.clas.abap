@@ -1,5 +1,6 @@
 class ZCL_PERSISTENT_ZTOCR definition
   public
+  final
   create protected
 
   global friends ZCB_PERSISTENT_ZTOCR .
@@ -149,16 +150,16 @@ protected section.
   data PICNM type TEXT100 .
   data DESCR type TEXT100 .
   data TEMNL type XUTERMINAL .
+  data UPLIP type ZOCR_UPLIP .
   data CRDAT type ERSDA .
   data CRTIM type UZEIT .
   data CRNAM type ERNAM .
   data CHDAT type LAEDA .
   data CHTIM type UZEIT .
   data CHNAM type AENAM .
+  data PSIZE type ZOCR_PSIZE .
   data PIC_STR type BCS_CONTENTS_BIN .
   data TXT_STR type BCS_CONTENTS_BIN .
-  data UPLIP type ZOCR_UPLIP .
-  data PSIZE type ZOCR_PSIZE .
 private section.
 ENDCLASS.
 

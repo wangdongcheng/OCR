@@ -4,9 +4,9 @@
 
 
 TYPES BEGIN OF gts_sgl_para.
-INCLUDE TYPE ztocr           AS ztocr.
+INCLUDE TYPE ztocr                  AS ztocr.
 *INCLUDE STRUCTURE zsocr01_pk AS pk.
-INCLUDE STRUCTURE zsocr01    AS 01.
+INCLUDE STRUCTURE zsocr01           AS 01.
 TYPES:
   fullpath     TYPE string, " C:\Users\wangd\Desktop\7.png
   path         TYPE string, " C:\Users\wangd\Desktop\

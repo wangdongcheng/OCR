@@ -20,19 +20,17 @@ FORM popup_file_browser
 
   DATA:
     lv_window_title TYPE string,
-    lv_filter       TYPE string.
-
-  DATA:
-    lt_filetable  TYPE filetable,
-    lv_rc         TYPE i,
-    lv_usr_action TYPE i.
+    lv_filter       TYPE string,
+    lt_filetable    TYPE filetable,
+    lv_rc           TYPE i,
+    lv_usr_action   TYPE i.
 
   lv_window_title = 'Select picture'(001).
 
   lv_filter = gc_filter.
   CONDENSE lv_filter NO-GAPS.
 
-  CALL METHOD cl_gui_frontend_services=>file_open_dialog
+  cl_gui_frontend_services=>file_open_dialog(
     EXPORTING
       window_title            = lv_window_title
       default_extension       = '*.*'
@@ -51,7 +49,7 @@ FORM popup_file_browser
       cntl_error              = 2
       error_no_gui            = 3
       not_supported_by_gui    = 4
-      OTHERS                  = 5.
+      OTHERS                  = 5 ).
   IF sy-subrc <> 0.
 * Implement suitable error handling here
   ELSE.
