@@ -3,26 +3,27 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCA_PERSISTENT_ZTOCR</CLSNAME>
+    <CLSNAME>ZOCR_CL_PERSIST_PIC</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Agent Persistent Class for Table ZTOCR</DESCRIPT>
+    <DESCRIPT>Persistent Layer Picture</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
+    <MSG_ID>ZOCR</MSG_ID>
    </VSEOCLASS>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
-     <CLSNAME>ZCA_PERSISTENT_ZTOCR</CLSNAME>
-     <CMPNAME>AGENT</CMPNAME>
+     <CLSNAME>ZOCR_CL_PERSIST_PIC</CLSNAME>
+     <CMPNAME>PIC_TABLE</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Class Agent - Singleton</DESCRIPT>
+     <DESCRIPT>Standard Table Type for Table ZTOCR</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
-     <CLSNAME>ZCA_PERSISTENT_ZTOCR</CLSNAME>
-     <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
+     <CLSNAME>ZOCR_CL_PERSIST_PIC</CLSNAME>
+     <CMPNAME>PIC_TABLE_OBJ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Class Constructor</DESCRIPT>
+     <DESCRIPT>Persistent Layer Picture</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
   </asx:values>

@@ -103,6 +103,12 @@
      <MSGNR>015</MSGNR>
      <TEXT>Please check the MD5 value of this picture</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Can&apos;t find MD5 value in picture DB</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

@@ -10,27 +10,29 @@ public section.
   interfaces IF_T100_MESSAGE .
 
   data SUBRC type SYST_SUBRC read-only .
-  data MSGV1 type SYMSGV read-only .
-  data MSGV2 type SYMSGV read-only .
-  data MSGV3 type SYMSGV read-only .
-  data MSGV4 type SYMSGV read-only .
   data MT_CALLSTACK type SYMSGV read-only .
+  data MSGV1 type SYMSGV .
+  data MSGV2 type SYMSGV .
+  data MSGV3 type SYMSGV .
+  data MSGV4 type SYMSGV .
 
   methods CONSTRUCTOR
     importing
       !TEXTID like IF_T100_MESSAGE=>T100KEY optional
       !PREVIOUS like PREVIOUS optional
       !SUBRC type SYST_SUBRC optional
+      !MT_CALLSTACK type SYMSGV optional
       !MSGV1 type SYMSGV optional
       !MSGV2 type SYMSGV optional
       !MSGV3 type SYMSGV optional
-      !MSGV4 type SYMSGV optional
-      !MT_CALLSTACK type SYMSGV optional .
+      !MSGV4 type SYMSGV optional .
   class-methods RAISE
     importing
       !IV_SUBRC type SYST_SUBRC optional
       !IV_TEXT type CLIKE
-      !IX_PREVIOUS type ref to CX_ROOT optional .
+      !IX_PREVIOUS type ref to CX_ROOT optional
+    raising
+      ZCX_ABAPGIT_EXCEPTION .
   class-methods RAISE_T100
     importing
       !IV_MSGID type SYMSGID default SY-MSGID
@@ -38,7 +40,9 @@ public section.
       !IV_MSGV1 type SYMSGV default SY-MSGV1
       !IV_MSGV2 type SYMSGV default SY-MSGV2
       !IV_MSGV3 type SYMSGV default SY-MSGV3
-      !IV_MSGV4 type SYMSGV default SY-MSGV4 .
+      !IV_MSGV4 type SYMSGV default SY-MSGV4
+    raising
+      ZCX_OCR_EXCEPTION .
 protected section.
 private section.
 
@@ -56,11 +60,11 @@ EXPORTING
 PREVIOUS = PREVIOUS
 .
 me->SUBRC = SUBRC .
+me->MT_CALLSTACK = MT_CALLSTACK .
 me->MSGV1 = MSGV1 .
 me->MSGV2 = MSGV2 .
 me->MSGV3 = MSGV3 .
 me->MSGV4 = MSGV4 .
-me->MT_CALLSTACK = MT_CALLSTACK .
 clear me->textid.
 if textid is initial.
   IF_T100_MESSAGE~T100KEY = IF_T100_MESSAGE=>DEFAULT_TEXTID.
