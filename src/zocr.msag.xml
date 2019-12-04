@@ -109,6 +109,12 @@
      <MSGNR>016</MSGNR>
      <TEXT>Can&apos;t find MD5 value in picture DB</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Failed to get instance of class &amp;1</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

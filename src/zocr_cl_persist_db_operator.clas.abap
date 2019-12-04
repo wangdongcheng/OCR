@@ -9,7 +9,9 @@ public section.
     importing
       !IV_TABLE_CLASS_NAME type SEOCLSNAME
     returning
-      value(RI_TABLE_OBJ) type ref to ZOCR_CL_PERSIST_DB .
+      value(RI_TABLE_OBJ) type ref to ZOCR_CL_PERSIST_DB
+    raising
+      ZCX_OCR_EXCEPTION .
 protected section.
 private section.
 
@@ -32,6 +34,12 @@ CLASS ZOCR_CL_PERSIST_DB_OPERATOR IMPLEMENTATION.
       CATCH cx_sy_dyn_call_illegal_method
             cx_sy_dyn_call_illegal_class.
 
+* 017	Failed to get instance of class &1
+        MESSAGE s017 WITH iv_table_class_name INTO DATA(lv_dummy).
+
+        zcx_ocr_exception=>raise_t100(
+          iv_msgid = sy-msgid
+          iv_msgno = sy-msgno ).
     ENDTRY.
 
   ENDMETHOD.

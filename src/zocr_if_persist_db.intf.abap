@@ -15,4 +15,16 @@ interface ZOCR_IF_PERSIST_DB
       !IS_PRIMAY_KEYS type ZOCR_IF_TOPS=>TS_PRIMARY_KEYS
     raising
       ZCX_OCR_EXCEPTION .
+  methods UPDATE
+    importing
+      !IT_UPD type TABLE
+      !IV_TABLE_NAME type TABNAME optional
+    raising
+      ZCX_OCR_EXCEPTION .
+  methods COMMIT_WORK
+    importing
+      !IB_WAIT type ABAP_BOOL default ABAP_TRUE .
+  methods SYNC_UPD
+    importing
+      !IT_UPD type TABLE .
 endinterface.

@@ -8,9 +8,13 @@ public section.
 
   interfaces ZOCR_IF_PERSIST_FACTORY .
 
-  data PIC_TABLE type ZTOCR_T read-only .
+  data PIC_TABLE type ZOCR_IF_TOPS=>TT_ZTOCR_HT read-only .
 
   methods ZOCR_IF_PERSIST_DB~SELECT_BY_PK
+    redefinition .
+  methods ZOCR_IF_PERSIST_DB~SYNC_UPD
+    redefinition .
+  methods ZOCR_IF_PERSIST_DB~UPDATE
     redefinition .
 protected section.
 private section.
@@ -40,6 +44,32 @@ CLASS ZOCR_CL_PERSIST_PIC IMPLEMENTATION.
           iv_msgno = sy-msgno    " Message Number
       ).
     ENDIF.
+
+  ENDMETHOD.
+
+
+  METHOD zocr_if_persist_db~sync_upd.
+
+    CHECK it_upd IS NOT INITIAL.
+    DATA(lt_upd) = CONV ztocr_t( it_upd ).
+
+    LOOP AT lt_upd ASSIGNING FIELD-SYMBOL(<ls_upd>).
+      READ TABLE pic_table ASSIGNING FIELD-SYMBOL(<ls_pic_tab>)
+        WITH TABLE KEY mandt    = sy-mandt
+                       guid_md5 = <ls_upd>-guid_md5.
+      IF sy-subrc EQ 0.
+        <ls_pic_tab>-zsocr   = <ls_upd>-zsocr        .
+      ENDIF.
+    ENDLOOP.
+
+  ENDMETHOD.
+
+
+  METHOD zocr_if_persist_db~update.
+
+    super->zocr_if_persist_db~update(
+      it_upd        = it_upd
+      iv_table_name = zocr_if_tops=>cs_tab_name-pic ).
 
   ENDMETHOD.
 
