@@ -35,7 +35,6 @@ CLASS zocr_cl_db_test IMPLEMENTATION.
   METHOD db_write.
 
 
-
   ENDMETHOD.
 
 

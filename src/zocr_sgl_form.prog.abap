@@ -265,7 +265,6 @@ FORM upl_new_pic
                 CHANGING
                    gs_sgl_para-pic_tab
                    gs_sgl_para-txt_tab.
-
   ENDIF.
 
 *-- display picture cockpit
@@ -1089,7 +1088,6 @@ FORM main
         ir_chnam TYPE ANY TABLE
         ir_md5   TYPE ANY TABLE.
 
-
 *-- prepare crit from selection screen input values
   PERFORM prep_crit
               USING
@@ -1111,11 +1109,14 @@ FORM main
               CHANGING
                  gt_zsocr_wklst.
 
-
 *-- AlV worklist display and ALV user events
-  PERFORM disp_pic_worklist
-              USING
-                 gt_zsocr_wklst.
+  zocr_cl_worklist_ui=>set_worklist_main_prog( sy-repid ).
+  zocr_cl_worklist_ui=>set_worklist_pf_status( zocr_if_tops=>cv_worklist_pfstatus_name ).
+  zocr_cl_worklist_ui=>set_worklist_ucomm( zocr_if_tops=>cv_worklist_ucomm_subr_name ).
+  zocr_cl_worklist_ui=>display_worklist(
+    CHANGING
+      ct_outtab         = gt_zsocr_wklst
+  ).
 
 ENDFORM.
 
@@ -1175,144 +1176,6 @@ FORM get_pic_db_by_crit
 
 ENDFORM.
 
-FORM disp_pic_worklist
-  USING
-        it_zsocr_wklst TYPE zsocr_wklst_t.
-
-  DATA:
-    lt_fieldcat TYPE lvc_t_fcat,
-    ls_layout   TYPE lvc_s_layo.
-
-*-- ALV Fieldcategory
-  PERFORM prep_fieldcat
-              USING
-                 'ZSOCR_WKLST'
-              CHANGING
-                 lt_fieldcat.
-
-*-- ALV Layout
-  PERFORM layout_prep
-              CHANGING
-                 ls_layout.
-
-*-- ALV reuse FM
-  CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY_LVC'
-    EXPORTING
-*     I_INTERFACE_CHECK        = ' '
-      i_bypassing_buffer       = abap_true
-*     I_BUFFER_ACTIVE          =
-      i_callback_program       = sy-repid
-      i_callback_pf_status_set = 'CALLBACK_SET_PF'
-      i_callback_user_command  = 'CALLBACK_USER_CMD'
-*     I_CALLBACK_TOP_OF_PAGE   = ' '
-*     I_CALLBACK_HTML_TOP_OF_PAGE       = ' '
-*     I_CALLBACK_HTML_END_OF_LIST       = ' '
-*     I_STRUCTURE_NAME         =
-*     I_BACKGROUND_ID          = ' '
-*     I_GRID_TITLE             =
-*     I_GRID_SETTINGS          =
-      is_layout_lvc            = ls_layout
-      it_fieldcat_lvc          = lt_fieldcat
-*     IT_EXCLUDING             =
-*     IT_SPECIAL_GROUPS_LVC    =
-*     IT_SORT_LVC              =
-*     IT_FILTER_LVC            =
-*     IT_HYPERLINK             =
-*     IS_SEL_HIDE              =
-*     I_DEFAULT                = 'X'
-      i_save                   = 'A' " All
-*     IS_VARIANT               =
-*     IT_EVENTS                =
-*     IT_EVENT_EXIT            =
-*     IS_PRINT_LVC             =
-*     IS_REPREP_ID_LVC         =
-*     I_SCREEN_START_COLUMN    = 0
-*     I_SCREEN_START_LINE      = 0
-*     I_SCREEN_END_COLUMN      = 0
-*     I_SCREEN_END_LINE        = 0
-*     I_HTML_HEIGHT_TOP        =
-*     I_HTML_HEIGHT_END        =
-*     IT_ALV_GRAPHICS          =
-*     IT_EXCEPT_QINFO_LVC      =
-*     IR_SALV_FULLSCREEN_ADAPTER        =
-* IMPORTING
-*     E_EXIT_CAUSED_BY_CALLER  =
-*     ES_EXIT_CAUSED_BY_USER   =
-    TABLES
-      t_outtab                 = it_zsocr_wklst
-    EXCEPTIONS
-      program_error            = 1
-      OTHERS                   = 2.
-  IF sy-subrc <> 0.
-* Implement suitable error handling here
-  ENDIF.
-
-ENDFORM.
-
-
-FORM prep_fieldcat
-  USING
-        iv_struc_name TYPE tabname
-  CHANGING
-        et_fieldcat   TYPE lvc_t_fcat.
-
-  DATA:
-     lt_fieldcat   TYPE lvc_t_fcat.
-  FIELD-SYMBOLS:
-     <ls_fieldcat> TYPE lvc_s_fcat.
-
-  CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
-    EXPORTING
-      i_structure_name       = iv_struc_name
-      i_bypassing_buffer     = abap_true
-    CHANGING
-      ct_fieldcat            = lt_fieldcat
-    EXCEPTIONS
-      inconsistent_interface = 1
-      program_error          = 2
-      OTHERS                 = 3.
-  IF sy-subrc <> 0.
-    CLEAR et_fieldcat.
-  ENDIF.
-
-  LOOP AT lt_fieldcat ASSIGNING <ls_fieldcat>.
-    IF <ls_fieldcat>-fieldname EQ 'SEL'     OR
-       <ls_fieldcat>-fieldname EQ 'PIC_STR' OR
-       <ls_fieldcat>-fieldname EQ 'TXT_STR'.
-
-      <ls_fieldcat>-tech = abap_true.
-    ELSEIF
-      <ls_fieldcat>-fieldname EQ 'GUID_MD5'.
-
-      <ls_fieldcat>-no_out = abap_true.
-    ELSEIF
-      <ls_fieldcat>-fieldname EQ 'UPLIP'.
-
-      <ls_fieldcat>-scrtext_l = <ls_fieldcat>-scrtext_m = <ls_fieldcat>-scrtext_s = 'Upload IP'.
-    ELSEIF
-      <ls_fieldcat>-fieldname EQ 'PSIZE'.
-
-      <ls_fieldcat>-scrtext_l = 'Picture Size'.
-      <ls_fieldcat>-scrtext_m = <ls_fieldcat>-scrtext_s = 'Pic Size'.
-    ENDIF.
-    <ls_fieldcat>-col_opt = abap_true.
-  ENDLOOP.
-
-  IF lt_fieldcat IS NOT INITIAL.
-    et_fieldcat = lt_fieldcat.
-  ENDIF.
-ENDFORM.
-
-FORM layout_prep
-  CHANGING
-        es_layout TYPE lvc_s_layo.
-
-  CLEAR es_layout.
-  es_layout-stylefname = 'CELLSTYLE'.
-  es_layout-box_fname  = 'SEL'.
-
-ENDFORM.
-
 FORM callback_set_pf                    ##called
   USING
         it_excltab TYPE slis_t_extab.
@@ -1335,13 +1198,12 @@ FORM excltab_prep
 
   DATA lt_excltab TYPE slis_t_extab.
 
-  lt_excltab = VALUE #( ( fcode = '&ETA'       ) "Details
-                        ( fcode = '&EB9'       ) "Call Up Report...
-                        ( fcode = '&ABC'       ) "ABC Analysis
-                        ( fcode = '&GRAPH'     ) "Graphic
-                        ( fcode = '&INFO'      ) "Information
-                        ( fcode = '&DATA_SAVE' ) "Save
-                        ).
+  lt_excltab = VALUE #( ( fcode = '&ETA'       )    "Details
+                        ( fcode = '&EB9'       )    "Call Up Report...
+                        ( fcode = '&ABC'       )    "ABC Analysis
+                        ( fcode = '&GRAPH'     )    "Graphic
+                        ( fcode = '&INFO'      )    "Information
+                        ( fcode = '&DATA_SAVE' ) ). "Save
 
   APPEND LINES OF lt_excltab TO ct_excltab.
 ENDFORM.

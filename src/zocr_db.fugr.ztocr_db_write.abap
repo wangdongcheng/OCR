@@ -1,4 +1,4 @@
-FUNCTION ZTOCR_DB_WRITE.
+FUNCTION ztocr_db_write.
 *"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING
@@ -46,5 +46,6 @@ FUNCTION ZTOCR_DB_WRITE.
       COMMIT WORK.
     ENDIF.
   ENDIF.
+
 
 ENDFUNCTION.

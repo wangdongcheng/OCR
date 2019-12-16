@@ -32,7 +32,7 @@ public section.
       !IV_TEXT type CLIKE
       !IX_PREVIOUS type ref to CX_ROOT optional
     raising
-      ZCX_ABAPGIT_EXCEPTION .
+      ZCX_OCR_EXCEPTION .
   class-methods RAISE_T100
     importing
       !IV_MSGID type SYMSGID default SY-MSGID
@@ -89,7 +89,7 @@ endif.
       lv_text = iv_text.
     ENDIF.
 
-    CL_MESSAGE_HELPER=>set_msg_vars_for_clike( lv_text ).
+    cl_message_helper=>set_msg_vars_for_clike( lv_text ).
 
     ls_t100_key-msgid = sy-msgid.
     ls_t100_key-msgno = sy-msgno.

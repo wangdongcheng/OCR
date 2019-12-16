@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZOCR_CL_PERSIST_PIC</CLSNAME>
+    <CLSNAME>ZOCR_CL_WORKLIST_UI</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Persistent Layer Picture</DESCRIPT>
+    <DESCRIPT>Worklist Grid UI</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
@@ -14,16 +14,10 @@
    </VSEOCLASS>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
-     <CLSNAME>ZOCR_CL_PERSIST_PIC</CLSNAME>
-     <CMPNAME>PIC_TABLE</CMPNAME>
+     <CLSNAME>ZOCR_CL_WORKLIST_UI</CLSNAME>
+     <CMPNAME>WORKLIST_MAIN_PROG</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Standard Table Type for Table ZTOCR</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CLSNAME>ZOCR_CL_PERSIST_PIC</CLSNAME>
-     <CMPNAME>PIC_TABLE_OBJ</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Persistent Layer Picture</DESCRIPT>
+     <DESCRIPT>ABAP System Field: Calling Program</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
   </asx:values>

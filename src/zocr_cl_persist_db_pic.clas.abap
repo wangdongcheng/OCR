@@ -1,4 +1,4 @@
-class ZOCR_CL_PERSIST_PIC definition
+class ZOCR_CL_PERSIST_DB_PIC definition
   public
   inheriting from ZOCR_CL_PERSIST_DB
   final
@@ -8,26 +8,27 @@ public section.
 
   interfaces ZOCR_IF_PERSIST_FACTORY .
 
+  aliases GET_INSTANTCE
+    for ZOCR_IF_PERSIST_FACTORY~GET_INSTANTCE .
+
   data PIC_TABLE type ZOCR_IF_TOPS=>TT_ZTOCR_HT read-only .
 
   methods ZOCR_IF_PERSIST_DB~SELECT_BY_PK
     redefinition .
   methods ZOCR_IF_PERSIST_DB~SYNC_UPD
     redefinition .
-  methods ZOCR_IF_PERSIST_DB~UPDATE
-    redefinition .
 protected section.
 private section.
 
-  class-data PIC_TABLE_OBJ type ref to ZOCR_CL_PERSIST_PIC .
+  class-data PIC_TABLE_OBJ type ref to ZOCR_CL_PERSIST_DB_PIC .
 ENDCLASS.
 
 
 
-CLASS ZOCR_CL_PERSIST_PIC IMPLEMENTATION.
+CLASS ZOCR_CL_PERSIST_DB_PIC IMPLEMENTATION.
 
 
-  METHOD zocr_if_persist_db~select_by_pk.
+  METHOD ZOCR_IF_PERSIST_DB~SELECT_BY_PK.
     CHECK is_primay_keys-ztocr_guid_md5 IS NOT INITIAL.
 
     SELECT
@@ -48,7 +49,7 @@ CLASS ZOCR_CL_PERSIST_PIC IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD zocr_if_persist_db~sync_upd.
+  METHOD ZOCR_IF_PERSIST_DB~SYNC_UPD.
 
     CHECK it_upd IS NOT INITIAL.
     DATA(lt_upd) = CONV ztocr_t( it_upd ).
@@ -65,16 +66,7 @@ CLASS ZOCR_CL_PERSIST_PIC IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD zocr_if_persist_db~update.
-
-    super->zocr_if_persist_db~update(
-      it_upd        = it_upd
-      iv_table_name = zocr_if_tops=>cs_tab_name-pic ).
-
-  ENDMETHOD.
-
-
-  METHOD zocr_if_persist_factory~get_instantce.
+  METHOD ZOCR_IF_PERSIST_FACTORY~GET_INSTANTCE.
     IF pic_table_obj IS NOT BOUND.
       CREATE OBJECT pic_table_obj.
     ENDIF.

@@ -115,6 +115,24 @@
      <MSGNR>017</MSGNR>
      <TEXT>Failed to get instance of class &amp;1</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Failed to display data on worklist</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Importing table is empty</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZOCR</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Please set table name in class by SE24</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>
