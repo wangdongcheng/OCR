@@ -20,4 +20,5 @@ interface ZOCR_IF_PERSIST_DB
   methods SYNC_UPD
     importing
       !IT_UPD type TABLE .
+  methods SET_TABLE_NAME .
 endinterface.

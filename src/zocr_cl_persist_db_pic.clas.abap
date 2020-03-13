@@ -17,6 +17,8 @@ public section.
     redefinition .
   methods ZOCR_IF_PERSIST_DB~SYNC_UPD
     redefinition .
+  methods ZOCR_IF_PERSIST_DB~SET_TABLE_NAME
+    redefinition .
 protected section.
 private section.
 
@@ -49,6 +51,11 @@ CLASS ZOCR_CL_PERSIST_DB_PIC IMPLEMENTATION.
   ENDMETHOD.
 
 
+  METHOD zocr_if_persist_db~set_table_name.
+    me->table_name = zocr_if_tops=>cs_tab_name-pic.
+  ENDMETHOD.
+
+
   METHOD ZOCR_IF_PERSIST_DB~SYNC_UPD.
 
     CHECK it_upd IS NOT INITIAL.
@@ -66,11 +73,13 @@ CLASS ZOCR_CL_PERSIST_DB_PIC IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD ZOCR_IF_PERSIST_FACTORY~GET_INSTANTCE.
+  METHOD zocr_if_persist_factory~get_instantce.
     IF pic_table_obj IS NOT BOUND.
-      CREATE OBJECT pic_table_obj.
+      pic_table_obj = NEW zocr_cl_persist_db_pic( ).
     ENDIF.
 
-    ri_table_obj = pic_table_obj.
+    pic_table_obj->set_table_name( ).
+    ro_table_obj = pic_table_obj.
+
   ENDMETHOD.
 ENDCLASS.

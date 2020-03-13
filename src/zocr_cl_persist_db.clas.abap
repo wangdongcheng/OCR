@@ -13,6 +13,8 @@ public section.
     for ZOCR_IF_PERSIST_DB~SELECT_BY_PK .
   aliases SELECT_BY_RANGES
     for ZOCR_IF_PERSIST_DB~SELECT_BY_RANGES .
+  aliases SET_TABLE_NAME
+    for ZOCR_IF_PERSIST_DB~SET_TABLE_NAME .
   aliases SYNC_UPD
     for ZOCR_IF_PERSIST_DB~SYNC_UPD .
   aliases UPDATE
@@ -31,20 +33,24 @@ CLASS ZOCR_CL_PERSIST_DB IMPLEMENTATION.
 
 
   METHOD constructor.
-    DATA(lv_class_name) = cl_abap_classdescr=>describe_by_object_ref( me )->absolute_name.
 
-    IF lv_class_name IS NOT INITIAL.
-      REPLACE FIRST OCCURRENCE OF '\CLASS=' IN lv_class_name WITH ''.
-    ENDIF.
+*-- The use of dynamic_cast implicitly violate the <Open-Closed-Principal>
 
-    me->table_name = SWITCH tabname( lv_class_name
-                                     WHEN zocr_if_tops=>cs_tab_cls_name-pic
-                                       THEN zocr_if_tops=>cs_tab_name-pic
-                                     WHEN zocr_if_tops=>cs_tab_cls_name-user
-                                       THEN zocr_if_tops=>cs_tab_name-user
-                                     " WHEN ...
-                                     "   THEN ...
-                                     ELSE || ).
+*    DATA(lv_class_name) = cl_abap_classdescr=>describe_by_object_ref( me )->absolute_name.
+*
+*    IF lv_class_name IS NOT INITIAL.
+*      REPLACE FIRST OCCURRENCE OF '\CLASS=' IN lv_class_name WITH ''.
+*    ENDIF.
+*
+*    me->table_name = SWITCH tabname( lv_class_name
+*                                     WHEN zocr_if_tops=>cs_tab_cls_name-pic
+*                                       THEN zocr_if_tops=>cs_tab_name-pic
+*                                     WHEN zocr_if_tops=>cs_tab_cls_name-user
+*                                       THEN zocr_if_tops=>cs_tab_name-user
+*                                     " WHEN ...
+*                                     "   THEN ...
+*                                     ELSE || ).
+
   ENDMETHOD.
 
 
@@ -58,6 +64,10 @@ CLASS ZOCR_CL_PERSIST_DB IMPLEMENTATION.
 
 
   method ZOCR_IF_PERSIST_DB~SELECT_BY_RANGES.
+  endmethod.
+
+
+  method ZOCR_IF_PERSIST_DB~SET_TABLE_NAME.
   endmethod.
 
 

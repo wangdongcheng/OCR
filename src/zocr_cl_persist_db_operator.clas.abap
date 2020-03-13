@@ -1,7 +1,10 @@
 class ZOCR_CL_PERSIST_DB_OPERATOR definition
   public
   final
-  create public .
+  create public
+
+  global friends ZOCR_CL_PERSIST_DB_PIC
+                 ZOCR_CL_PERSIST_DB_USER .
 
 public section.
 
@@ -9,7 +12,7 @@ public section.
     importing
       !IV_TABLE_CLASS_NAME type SEOCLSNAME
     returning
-      value(RI_TABLE_OBJ) type ref to ZOCR_CL_PERSIST_DB
+      value(RO_TABLE_OBJ) type ref to ZOCR_CL_PERSIST_DB
     raising
       ZCX_OCR_EXCEPTION .
   class-methods COMMIT_WORK .
@@ -61,7 +64,7 @@ CLASS ZOCR_CL_PERSIST_DB_OPERATOR IMPLEMENTATION.
     TRY .
         CALL METHOD (iv_table_class_name)=>get_instantce
           RECEIVING
-            ri_table_obj = ri_table_obj.
+            ro_table_obj = ro_table_obj.
 
       CATCH cx_sy_dyn_call_illegal_method
             cx_sy_dyn_call_illegal_class.
