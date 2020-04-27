@@ -10,6 +10,14 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZOCR_IF_TOPS</CLSNAME>
+     <CMPNAME>CV_MSG_CLAS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Application Area</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

@@ -30,7 +30,7 @@ ENDCLASS.
 CLASS ZOCR_CL_PERSIST_DB_PIC IMPLEMENTATION.
 
 
-  METHOD ZOCR_IF_PERSIST_DB~SELECT_BY_PK.
+  METHOD zocr_if_persist_db~select_by_pk.
     CHECK is_primay_keys-ztocr_guid_md5 IS NOT INITIAL.
 
     SELECT
