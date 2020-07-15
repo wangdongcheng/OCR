@@ -319,15 +319,8 @@ MODULE init_0100 OUTPUT.
     ENDIF.
 
 *--- read only
-    CALL METHOD gi_txt->set_readonly_mode
-      EXCEPTIONS
-        error_cntl_call_method = 1
-        invalid_parameter      = 2
-        OTHERS                 = 3.
-    IF sy-subrc <> 0.
-      macro_msg.
-      RETURN.
-    ENDIF.
+    gi_txt->set_readonly_mode( ).
+
   ENDIF.
 
 ENDMODULE.
